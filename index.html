@@ -1,0 +1,974 @@
+<!doctype html>
+<html lang="ro">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Consultanță Germania — Impozite, Alocații, Beneficii</title>
+  <meta name="description"
+    content="Servicii de consultanță în Germania: impozit, Kindergeld, Wohngeld, Arbeitslosengeld, Elterngeld, Kinderzuschlag, utilități și asistență specializată. Rapid, online și transparent.">
+  <!-- Bootstrap 5.0.2 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <style>
+    :root {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      scroll-padding-top: 4.5rem;
+    }
+
+    /* Hero gradient (match theme) */
+    .hero {
+      background:
+        radial-gradient(1200px 600px at 10% 10%, rgba(99, 102, 241, .18), transparent),
+        radial-gradient(1000px 500px at 90% 10%, rgba(59, 130, 246, .15), transparent);
+    }
+
+    /* Soft card hover */
+    .soft-card {
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .soft-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 1rem 2rem rgba(0, 0, 0, .08);
+    }
+
+    /* Section title underline */
+    .section-title {
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -.4rem;
+      width: 40%;
+      height: 3px;
+      background: #6366f1;
+      border-radius: 2px;
+    }
+
+    /* Fade-up */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(12px);
+      animation: fadeUp .7s ease forwards;
+    }
+
+    .fade-up.delay-1 {
+      animation-delay: .1s;
+    }
+
+    .fade-up.delay-2 {
+      animation-delay: .2s;
+    }
+
+    .fade-up.delay-3 {
+      animation-delay: .3s;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* Anchor offset */
+    section {
+      scroll-margin-top: 5rem;
+    }
+
+    /* ===== Animated Services (scoped to .services) ===== */
+    .services {
+      --primary: #6366f1;
+      --primary-600: #4f46e5;
+      --blue-300: #93c5fd;
+      --bg-grad-start: #eef2ff;
+      --bg-grad-end: #e0f2fe;
+      --text: #0f172a;
+      --muted: #64748b;
+      --card: #ffffff;
+      --radius: 18px;
+      --shadow: 0 10px 28px rgba(2, 8, 23, .08);
+      --ring: 1.5px;
+      position: relative;
+    }
+
+    .services .container {
+      margin-inline: auto;
+      padding-inline: 1rem;
+    }
+
+    .services .headline {
+      margin-bottom: 1.25rem;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      color: var(--text);
+      font-weight: 800;
+      font-size: clamp(1.4rem, 1.1rem + .9vw, 1.9rem);
+    }
+
+    .services .headline::after {
+      content: "";
+      flex: 1 1 auto;
+      height: 2px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--primary), transparent);
+      opacity: .35;
+    }
+
+    .services .subhead {
+      color: var(--muted);
+      margin: -.25rem 0 1.25rem;
+    }
+
+    .services .grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+
+    @media (min-width:992px) {
+      .services .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width:768px) and (max-width:991.98px) {
+      .services .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .services .card {
+      position: relative;
+      background: var(--card);
+      color: var(--text);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      overflow: hidden;
+      transform: translateY(12px) scale(.985);
+      opacity: 0;
+      transition: transform .6s cubic-bezier(.2, .8, .2, 1), opacity .5s ease, box-shadow .35s ease;
+      will-change: transform, opacity, box-shadow;
+      isolation: isolate;
+    }
+
+    .services .card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      border-radius: calc(var(--radius) + 1px);
+      background: conic-gradient(from var(--angle, 0deg), var(--primary) 0%, var(--blue-300) 33%, var(--primary-600) 66%, var(--primary) 100%);
+      -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      padding: var(--ring);
+      opacity: .22;
+      filter: blur(.25px);
+      animation: spin 10s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        --angle: 360deg;
+      }
+    }
+
+    .services .card:hover {
+      transform: translateY(-2px) scale(1);
+      box-shadow: 0 16px 40px rgba(2, 8, 23, .12);
+    }
+
+    .services .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(120deg, transparent 40%, rgba(255, 255, 255, .22) 50%, transparent 60%);
+      transform: translateX(-120%);
+      transition: transform .9s ease;
+      pointer-events: none;
+    }
+
+    .services .card:hover::after {
+      transform: translateX(120%);
+    }
+
+    .services .head {
+      display: flex;
+      gap: .75rem;
+      align-items: center;
+      margin-bottom: .5rem;
+    }
+
+    .services .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--bg-grad-start), var(--bg-grad-end));
+      display: grid;
+      place-items: center;
+      color: var(--primary);
+      border: 1px solid rgba(99, 102, 241, .25);
+    }
+
+    .services h3 {
+      font-weight: 800;
+      margin: 0;
+      font-size: clamp(1.05rem, .95rem + .4vw, 1.25rem);
+    }
+
+    .services .sub {
+      font-size: .85rem;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .services ul {
+      margin: .5rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: .5rem;
+    }
+
+    .services li {
+      position: relative;
+      padding-left: 1.5rem;
+      color: #334155;
+      line-height: 1.5;
+      transform: translateY(6px);
+      opacity: 0;
+      transition: transform .5s ease, opacity .5s ease;
+    }
+
+    .services li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .4rem;
+      width: .9rem;
+      height: .9rem;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, var(--primary) 0 55%, rgba(99, 102, 241, .25) 56% 100%);
+      box-shadow: 0 2px 8px rgba(79, 70, 229, .35);
+    }
+
+    .services .card:hover li {
+      transform: translateX(2px);
+    }
+
+    .services .wash {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(1200px 400px at 10% -10%, var(--bg-grad-start) 10%, transparent 60%),
+        radial-gradient(1200px 400px at 90% 0%, var(--bg-grad-end) 10%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .services .card.in {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .services .card.in li {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .services .card.in li:nth-child(1) {
+      transition-delay: .05s;
+    }
+
+    .services .card.in li:nth-child(2) {
+      transition-delay: .10s;
+    }
+
+    .services .card.in li:nth-child(3) {
+      transition-delay: .15s;
+    }
+
+    .services .card.in li:nth-child(4) {
+      transition-delay: .20s;
+    }
+
+    .services .card.in li:nth-child(5) {
+      transition-delay: .25s;
+    }
+
+    @media (prefers-reduced-motion:reduce) {
+
+      .services .card,
+      .services .card::before,
+      .services .card::after,
+      .services li {
+        transition: none !important;
+        animation: none !important;
+      }
+
+      .services .card {
+        opacity: 1;
+        transform: none;
+      }
+
+      .services li {
+        opacity: 1;
+        transform: none;
+      }
+    }
+
+    /* Footer links */
+    .footer-link {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footer-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="80" tabindex="0">
+  <!-- Navbar -->
+  <nav id="mainNav" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm fixed-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#acasa">
+        <span class="badge me-2" style="background:#6366f1">DE</span>
+        <span class="fw-semibold">Consultanță Germania</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navCollapse"
+        aria-controls="navCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navCollapse">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="#acasa">Acasă</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicii">Servicii</a></li>
+          <li class="nav-item"><a class="nav-link" href="#despre">Despre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#intrebari">Întrebări</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+        <a class="btn btn-primary ms-lg-3" href="#contact" style="background:#6366f1;border-color:#6366f1">Solicită
+          ofertă</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header id="acasa" class="hero py-5 py-lg-6 mt-5">
+    <div class="container py-5">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h1 class="display-5 fw-bold fade-up">Servicii de consultanță pentru viața ta în Germania</h1>
+          <p class="lead text-muted mt-3 fade-up delay-1">Te ajutăm să obții <strong>banii și drepturile</strong> care
+            ți se cuvin: impozit, alocații, ajutor de chirie, șomaj, utilități și altele.</p>
+          <div class="d-flex gap-2 mt-4 fade-up delay-2">
+            <a href="#servicii" class="btn btn-primary btn-lg" style="background:#6366f1;border-color:#6366f1">Vezi
+              servicii</a>
+            <a href="#contact" class="btn btn-outline-secondary btn-lg">Evaluare gratuită</a>
+          </div>
+          <ul class="list-unstyled text-muted mt-3 fade-up delay-3">
+            <li>• Consultanți vorbitori de română și germană</li>
+            <li>• Proces 100% online • Transparent • Fără stres</li>
+            <li>• Prețuri fixe sau comision la succes</li>
+          </ul>
+        </div>
+
+        <!-- Hero tiles: 2 x 3 grid -->
+        <div class="col-lg-6">
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="p-4 bg-white border rounded-3 soft-card text-center fade-up">Impozit<br><small
+                  class="text-muted">Estimare & depunere</small></div>
+            </div>
+            <div class="col-6">
+              <div class="p-4 bg-white border rounded-3 soft-card text-center fade-up delay-1">Kindergeld<br><small
+                  class="text-muted">Alocație copii</small></div>
+            </div>
+            <div class="col-6">
+              <div class="p-4 bg-white border rounded-3 soft-card text-center fade-up delay-2">Wohngeld<br><small
+                  class="text-muted">Ajutor chirie</small></div>
+            </div>
+            <div class="col-6">
+              <div class="p-4 bg-white border rounded-3 soft-card text-center fade-up delay-3">Elterngeld<br><small
+                  class="text-muted">Părinți</small></div>
+            </div>
+            <div class="col-6">
+              <div class="p-4 bg-white border rounded-3 soft-card text-center fade-up delay-2">
+                Arbeitslosengeld<br><small class="text-muted">Ajutor șomaj</small></div>
+            </div>
+            <div class="col-6">
+              <div class="p-4 bg-white border rounded-3 soft-card text-center fade-up delay-3">Kinderzuschlag<br><small
+                  class="text-muted">Supliment copii</small></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Prezentare rapidă (cards Bootstrap) -->
+  <section id="prezentare-servicii" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="h1 section-title">Servicii</h2>
+      <p class="text-muted mt-2 col-lg-8">Alegem împreună soluția potrivită situației tale. Mai jos găsești o prezentare
+        pe scurt a fiecărui serviciu.</p>
+
+      <div class="row g-4 mt-1">
+        <!-- Impozit -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card soft-card h-100">
+            <div class="card-body">
+              <h3 class="h5">Recuperarea impozitului (Steuererstattung)</h3>
+              <p class="text-muted">Calcul drepturi, declarație, clarificări cu Finanzamt, verificare decizie.</p>
+              <div class="d-flex gap-2">
+                <a href="#contact" class="btn btn-sm btn-primary" style="background:#6366f1;border-color:#6366f1">Află
+                  cât poți recupera</a>
+                <a href="#detalii-impozit" class="btn btn-sm btn-link">Detalii</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Kindergeld -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card soft-card h-100">
+            <div class="card-body">
+              <h3 class="h5">Alocația pentru copii (Kindergeld)</h3>
+              <p class="text-muted">Eligibilitate, dosar pentru Familienkasse, perioade retroactive.</p>
+              <div class="d-flex gap-2">
+                <a href="#contact" class="btn btn-sm btn-primary"
+                  style="background:#6366f1;border-color:#6366f1">Verifică eligibilitatea</a>
+                <a href="#detalii-kindergeld" class="btn btn-sm btn-link">Detalii</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Wohngeld -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card soft-card h-100">
+            <div class="card-body">
+              <h3 class="h5">Ajutor pentru chirie (Wohngeld)</h3>
+              <p class="text-muted">Simulare, listă documente, completare cerere, urmărire răspuns.</p>
+              <div class="d-flex gap-2">
+                <a href="#contact" class="btn btn-sm btn-primary"
+                  style="background:#6366f1;border-color:#6366f1">Simulează acum</a>
+                <a href="#detalii-wohngeld" class="btn btn-sm btn-link">Detalii</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ALG -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card soft-card h-100">
+            <div class="card-body">
+              <h3 class="h5">Ajutor pentru șomaj (ALG I / Bürgergeld)</h3>
+              <p class="text-muted">Înscriere, drepturi, comunicare oficială, contestații.</p>
+              <div class="d-flex gap-2">
+                <a href="#contact" class="btn btn-sm btn-primary" style="background:#6366f1;border-color:#6366f1">Cere
+                  consultanță</a>
+                <a href="#detalii-alg" class="btn btn-sm btn-link">Detalii</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Elterngeld -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card soft-card h-100">
+            <div class="card-body">
+              <h3 class="h5">Indemnizația pentru creșterea copilului (Elterngeld)</h3>
+              <p class="text-muted">Alegerea variantei, estimări sume, depunere dosar.</p>
+              <div class="d-flex gap-2">
+                <a href="#contact" class="btn btn-sm btn-primary"
+                  style="background:#6366f1;border-color:#6366f1">Calculează opțiunile</a>
+                <a href="#detalii-elterngeld" class="btn btn-sm btn-link">Detalii</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Kinderzuschlag -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card soft-card h-100">
+            <div class="card-body">
+              <h3 class="h5">Alocația suplimentară pentru copii (Kinderzuschlag)</h3>
+              <p class="text-muted">Eligibilitate venituri, integrare cu Kindergeld și Wohngeld.</p>
+              <div class="d-flex gap-2">
+                <a href="#contact" class="btn btn-sm btn-primary" style="background:#6366f1;border-color:#6366f1">Începe
+                  evaluarea</a>
+                <a href="#detalii-kinderzuschlag" class="btn btn-sm btn-link">Detalii</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Servicii de consultanță (general) -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card soft-card h-100">
+            <div class="card-body">
+              <h3 class="h5">Servicii de consultanță</h3>
+              <p class="text-muted">Îndrumare completă pentru persoane fizice și juridice: acte, proceduri,
+                corespondență.</p>
+              <div class="d-flex gap-2">
+                <a href="#detalii-consultanta" class="btn btn-sm btn-link">Detalii</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Contractare rapidă (utilități) -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card soft-card h-100">
+            <div class="card-body">
+              <h3 class="h5">Contractare rapidă (utilități)</h3>
+              <p class="text-muted mb-2">Ofertare & activare fără bătăi de cap:</p>
+              <ul class="mb-3 text-muted">
+                <li>Curent electric</li>
+                <li>Gaze naturale</li>
+                <li>Internet & Telecom (acasă și business)</li>
+              </ul>
+              <a href="#detalii-utilitati" class="btn btn-sm btn-link">Detalii</a>
+            </div>
+          </div>
+        </div>
+        <!-- Asistență specializată -->
+        <div class="col-md-6 col-xl-4">
+          <div class="card soft-card h-100">
+            <div class="card-body">
+              <h3 class="h5">Asistență specializată</h3>
+              <ul class="mb-3 text-muted">
+                <li>Permis de ședere pentru cetățeni străini</li>
+                <li>Insolvență — consultanță și soluții</li>
+              </ul>
+              <a href="#detalii-asistenta" class="btn btn-sm btn-link">Detalii</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detalii Servicii (animated & themed) -->
+  <section id="servicii" class="services py-5">
+    <div class="wash" aria-hidden="true"></div>
+    <div class="container">
+      <div class="headline">Detalii Servicii</div>
+      <div class="subhead">Prezentare pe scurt a pașilor și a ceea ce facem pentru tine.</div>
+
+      <div class="grid">
+        <!-- Consultanță generală -->
+        <article id="detalii-consultanta" class="card">
+          <div class="head">
+            <span class="icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M4 6h16M4 12h10M4 18h7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </span>
+            <div>
+              <h3>Servicii de consultanță</h3>
+              <div class="sub">Persoane fizice & juridice</div>
+            </div>
+          </div>
+          <ul>
+            <li>Evaluare caz și strategie (telefon/online)</li>
+            <li>Verificare documente și pregătire dosare</li>
+            <li>Împuternicire și corespondență oficială în germană</li>
+            <li>Urmărire până la decizie/finalizare</li>
+          </ul>
+        </article>
+
+        <!-- Impozit -->
+        <article id="detalii-impozit" class="card">
+          <div class="head">
+            <span class="icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M3 7h18v10H3z" stroke="currentColor" stroke-width="1.8" />
+                <path d="M7 12h10M12 9v6" stroke="currentColor" stroke-width="1.8" />
+              </svg>
+            </span>
+            <div>
+              <h3>Recuperarea impozitului</h3>
+              <div class="sub">(Steuererstattung)</div>
+            </div>
+          </div>
+          <ul>
+            <li>Verificare eligibilitate și documente (Lohnsteuerbescheinigung, contracte, cheltuieli deductibile)</li>
+            <li>Completare declarație (ESt 1 V, Anlage N etc.) și depunere la Finanzamt</li>
+            <li>Asistență la clarificări și contestații</li>
+            <li>Estimare sumă rambursată și termene tipice</li>
+          </ul>
+        </article>
+
+        <!-- Kindergeld -->
+        <article id="detalii-kindergeld" class="card">
+          <div class="head">
+            <span class="icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <circle cx="7" cy="7" r="3" stroke="currentColor" stroke-width="1.8" />
+                <circle cx="17" cy="9" r="2.5" stroke="currentColor" stroke-width="1.8" />
+                <path d="M2.5 20a5 5 0 0 1 9 0M13 20c.3-2.7 2.4-4.5 4.7-4" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" />
+              </svg>
+            </span>
+            <div>
+              <h3>Alocația pentru copii</h3>
+              <div class="sub">(Kindergeld)</div>
+            </div>
+          </div>
+          <ul>
+            <li>Eligibilitate: reședință/angajare în DE, vârsta copilului, școlarizare</li>
+            <li>Aplicare la Familienkasse (inclusiv retroactiv)</li>
+            <li>Coordonarea cu alocația din RO, dacă e cazul</li>
+            <li>Urmărirea dosarului până la decizie</li>
+          </ul>
+        </article>
+
+        <!-- Wohngeld -->
+        <article id="detalii-wohngeld" class="card">
+          <div class="head">
+            <span class="icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M3 11.5 12 4l9 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+                <path d="M5 10.5V20h14v-9.5" stroke="currentColor" stroke-width="1.8" />
+              </svg>
+            </span>
+            <div>
+              <h3>Ajutor pentru chirie</h3>
+              <div class="sub">(Wohngeld)</div>
+            </div>
+          </div>
+          <ul>
+            <li>Simulare pe baza venitului și chiriei</li>
+            <li>Liste documente pe land/localitate</li>
+            <li>Completare cerere și depunere</li>
+            <li>Actualizări și prelungiri</li>
+          </ul>
+        </article>
+
+        <!-- Arbeitslosengeld -->
+        <article id="detalii-alg" class="card">
+          <div class="head">
+            <span class="icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="8" width="18" height="11" rx="2" stroke="currentColor" stroke-width="1.8" />
+                <path d="M9 8V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2" stroke="currentColor" stroke-width="1.8" />
+              </svg>
+            </span>
+            <div>
+              <h3>Ajutor pentru șomaj</h3>
+              <div class="sub">(ALG I / Bürgergeld)</div>
+            </div>
+          </div>
+          <ul>
+            <li>Înscriere la Agentur für Arbeit / Jobcenter</li>
+            <li>Verificare perioade contribuție și drepturi</li>
+            <li>Traduceri și comunicare oficială</li>
+            <li>Suport la programări și contestații</li>
+          </ul>
+        </article>
+
+        <!-- Elterngeld -->
+        <article id="detalii-elterngeld" class="card">
+          <div class="head">
+            <span class="icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="1.8" />
+                <path d="M8 3v4M16 3v4M7.5 13.5c1.5-1.5 3.5-1.5 5 0s3.5 1.5 5 0" stroke="currentColor"
+                  stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </span>
+            <div>
+              <h3>Indemnizația pentru creșterea copilului</h3>
+              <div class="sub">(Elterngeld)</div>
+            </div>
+          </div>
+          <ul>
+            <li>Basic, Plus, Parteneriat — alegerea variantei</li>
+            <li>Estimare sume și planificare concediu</li>
+            <li>Documente necesare și termene</li>
+            <li>Depunere dosar la Elterngeldstelle</li>
+          </ul>
+        </article>
+
+        <!-- Kinderzuschlag -->
+        <article id="detalii-kinderzuschlag" class="card">
+          <div class="head">
+            <span class="icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M12 3 5 6v5c0 5.25 3.5 8.5 7 10 3.5-1.5 7-4.75 7-10V6l-7-3z" stroke="currentColor"
+                  stroke-width="1.8" />
+                <path d="M12 8v6M9 11h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </span>
+            <div>
+              <h3>Alocația suplimentară pentru copii</h3>
+              <div class="sub">(Kinderzuschlag)</div>
+            </div>
+          </div>
+          <ul>
+            <li>Test rapid de eligibilitate (KiZ-Lotse)</li>
+            <li>Integrare cu Kindergeld și Wohngeld</li>
+            <li>Listă documente și depunere</li>
+            <li>Urmărire până la soluționare</li>
+          </ul>
+        </article>
+
+        <!-- Utilități -->
+        <article id="detalii-utilitati" class="card">
+          <div class="head">
+            <span class="icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M6 3v7a3 3 0 0 0 6 0V3M12 14v7M18 6v15" stroke="currentColor" stroke-width="1.8"
+                  stroke-linecap="round" />
+              </svg>
+            </span>
+            <div>
+              <h3>Contractare rapidă (utilități)</h3>
+              <div class="sub">Ofertare & activare</div>
+            </div>
+          </div>
+          <ul>
+            <li>Curent electric — comparare oferte & contractare</li>
+            <li>Gaze naturale — optimizare costuri</li>
+            <li>Internet & Telecom — acasă și business</li>
+          </ul>
+        </article>
+
+        <!-- Asistență specializată -->
+        <article id="detalii-asistenta" class="card">
+          <div class="head">
+            <span class="icon" aria-hidden="true">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+                <path d="M12 3l7 4v5c0 5-3.5 8-7 9-3.5-1-7-4-7-9V7l7-4z" stroke="currentColor" stroke-width="1.8" />
+                <path d="M12 8v5M9.5 10.5H14.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" />
+              </svg>
+            </span>
+            <div>
+              <h3>Asistență specializată</h3>
+              <div class="sub">Permis de ședere & Insolvență</div>
+            </div>
+          </div>
+          <ul>
+            <li>Permis de ședere pentru cetățeni străini</li>
+            <li>Insolvență — consultanță și soluții adaptate</li>
+            <li>Programări, documente, reprezentare</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+
+    <!-- Reveal script (scoped to #servicii) -->
+    <script>
+      (function () {
+        const cards = document.querySelectorAll('#servicii .card');
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+        }, { threshold: .15 });
+        cards.forEach(c => io.observe(c));
+      })();
+    </script>
+  </section>
+
+  <!-- Despre -->
+  <section id="despre" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="h1 section-title">Despre noi</h2>
+      <p class="text-muted mt-2 col-lg-8">Suntem o echipă de consultanți români cu experiență în sistemul administrativ
+        german. Lucrăm 100% online, clar și prietenos. Explicăm în română ce ai de făcut și gestionăm documentele în
+        germană în numele tău.</p>
+      <div class="row g-3 mt-2">
+        <div class="col-md-4">
+          <div class="p-3 border rounded-3 bg-white soft-card">+1.500 dosare soluționate</div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 border rounded-3 bg-white soft-card">Răspuns în 24–48h lucrătoare</div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-3 border rounded-3 bg-white soft-card">Prețuri transparente</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="intrebari" class="py-5">
+    <div class="container">
+      <h2 class="h1 section-title">Întrebări frecvente</h2>
+      <div class="accordion mt-3" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q1">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1"
+              aria-expanded="true" aria-controls="a1">
+              Pot depune cererile 100% online?
+            </button>
+          </h2>
+          <div id="a1" class="accordion-collapse collapse show" aria-labelledby="q1" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Da. Îți explicăm pașii, colectăm documentele în siguranță și ne ocupăm de
+              depunere/corespondență.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q2">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2"
+              aria-expanded="false" aria-controls="a2">
+              În cât timp primesc banii?
+            </button>
+          </h2>
+          <div id="a2" class="accordion-collapse collapse" aria-labelledby="q2" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Depinde de instituție și de perioadă. De obicei, deciziile vin în 4–12
+              săptămâni.</div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="q3">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3"
+              aria-expanded="false" aria-controls="a3">
+              Cât costă?
+            </button>
+          </h2>
+          <div id="a3" class="accordion-collapse collapse" aria-labelledby="q3" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Îți trimitem o ofertă în scris înainte de a începe. Pentru unele servicii lucrăm
+              cu comision la succes.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-5 bg-light">
+    <div class="container">
+      <h2 class="h1 section-title">Contact</h2>
+      <p class="text-muted mt-2 col-lg-8">Spune-ne pe scurt situația ta și revenim în 24–48h lucrătoare.</p>
+      <form class="row g-3 mt-1 col-lg-8">
+        <div class="col-md-6">
+          <label for="nume" class="form-label">Nume</label>
+          <input type="text" class="form-control" id="nume" required>
+        </div>
+        <div class="col-md-6">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" required>
+        </div>
+        <div class="col-12">
+          <label for="mesaj" class="form-label">Mesaj</label>
+          <textarea class="form-control" id="mesaj" rows="5" required></textarea>
+        </div>
+        <div class="col-12 d-flex align-items-center gap-3">
+          <button type="submit" class="btn btn-primary" style="background:#6366f1;border-color:#6366f1">Trimite
+            mesajul</button>
+          <small class="text-muted">Prin trimitere ești de acord cu prelucrarea datelor în scop de consultanță.</small>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4">
+    <div class="container small text-muted d-flex flex-column flex-lg-row justify-content-between">
+      <div>© <span id="year"></span> Consultanță Germania — Toate drepturile rezervate.</div>
+      <div class="d-flex gap-3 mt-2 mt-lg-0">
+        <a class="footer-link" href="#acasa">Acasă</a>
+        <a class="footer-link" href="#prezentare-servicii">Servicii</a>
+        <a class="footer-link" href="#despre">Despre</a>
+        <a class="footer-link" href="#intrebari">Întrebări</a>
+        <a class="footer-link" href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <!-- Social FABs: WhatsApp + Facebook -->
+  <style>
+    .social-fab-wrap {
+      position: fixed;
+      right: 16px;
+      bottom: 16px;
+      z-index: 1050;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .social-fab {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      text-decoration: none;
+      box-shadow: 0 12px 30px rgba(2, 8, 23, .18);
+      transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+      will-change: transform, box-shadow;
+    }
+
+    .social-fab:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(2, 8, 23, .22);
+    }
+
+    .fab-wa {
+      background: #25D366;
+    }
+
+    .fab-fb {
+      background: #1877F2;
+    }
+
+    .social-fab svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    @media (max-width: 575.98px) {
+      .social-fab {
+        width: 52px;
+        height: 52px;
+      }
+
+      .social-fab svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  </style>
+
+  <div class="social-fab-wrap" aria-label="Contact rapid">
+    <!-- WhatsApp -->
+    <a class="social-fab fab-wa"
+      href="https://wa.me/4915734659642?text=Salut!%20Am%20o%20întrebare%20despre%20serviciile%20de%20consultanță."
+      target="_blank" rel="noopener" aria-label="Scrie pe WhatsApp">
+      <!-- WA icon -->
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path fill="currentColor"
+          d="M20.52 3.48A11.94 11.94 0 0 0 12.06 0C5.5 0 .2 5.3.2 11.86c0 2.1.55 4.14 1.6 5.95L0 24l6.36-1.66a12 12 0 0 0 5.7 1.46h.01c6.56 0 11.86-5.3 11.86-11.86 0-3.17-1.23-6.14-3.41-8.4ZM12.07 21.3h-.01a9.6 9.6 0 0 1-4.9-1.34l-.35-.2-3.77.99 1.01-3.67-.23-.38a9.6 9.6 0 1 1 8.25 4.6Zm5.53-7.17c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.37-1.46-.88-.79-1.48-1.77-1.65-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.5-.17 0-.37-.02-.57-.02-.2 0-.52.07-.79.37-.27.3-1.04 1-1.04 2.43 0 1.43 1.06 2.8 1.2 2.98.15.2 2.07 3.17 5.02 4.45.7.3 1.25.48 1.68.62.7.22 1.33.19 1.84.11.56-.08 1.77-.72 2.02-1.43.25-.71.25-1.32.18-1.45-.07-.13-.27-.2-.57-.35Z" />
+      </svg>
+    </a>
+
+    <!-- Facebook (înlocuiește linkul cu pagina ta) -->
+    <a class="social-fab fab-fb" href="https://facebook.com/" target="_blank" rel="noopener"
+      aria-label="Deschide pagina de Facebook">
+      <!-- FB icon -->
+      <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path fill="currentColor"
+          d="M22 12.07C22 6.48 17.52 2 11.93 2 6.35 2 1.87 6.48 1.87 12.07 1.87 17.1 5.53 21.2 10.28 22v-7.02H7.9V12h2.38v-2.3c0-2.35 1.4-3.65 3.55-3.65 1.03 0 2.12.18 2.12.18v2.33h-1.19c-1.18 0-1.55.73-1.55 1.47V12h2.64l-.42 2.98h-2.22V22c4.75-.8 8.41-4.9 8.41-9.93Z" />
+      </svg>
+    </a>
+  </div>
+
+</body>
+
+</html>
