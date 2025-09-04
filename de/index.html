@@ -327,7 +327,7 @@
     </div>
   </section>
 
-  <section id="contact" class="py-5 bg-light">
+  <section id="kontakt" class="py-5 bg-light">
     <div class="container">
       <h2 class="h1 section-title">Kontakt</h2>
       <p class="text-muted mt-2 col-lg-8">Beschreiben Sie kurz Ihre Situation – wir melden uns innerhalb von 24–48 Std.
@@ -340,76 +340,46 @@
         <a href="tel:+4915734659642" class="btn btn-outline-secondary">Anrufen: +49 1573 4659642</a>
       </div>
 
-      <form class="row g-3 mt-1 col-lg-8" method="post" action="#" enctype="multipart/form-data" id="contactFormDE">
+      <form class="row g-3 mt-1 col-lg-8" id="contactFormDE"
+        data-sb-form-api-token="a45f4d94-ca8f-4b05-b6f6-3cbf0aa11b84">
         <div class="col-md-6">
           <label for="nameDE" class="form-label">Name</label>
-          <input type="text" class="form-control" id="nameDE" name="name" required>
+          <input class="form-control" id="nameDE" type="text" placeholder="Name eingeben"
+            data-sb-validations="required" />
+          <div class="invalid-feedback" data-sb-feedback="nameDE:required">Name ist erforderlich.</div>
         </div>
         <div class="col-md-6">
           <label for="emailDE" class="form-label">E-Mail</label>
-          <input type="email" class="form-control" id="emailDE" name="email" required>
+          <input class="form-control" id="emailDE" type="email" placeholder="E-Mail eingeben"
+            data-sb-validations="required,email" />
+          <div class="invalid-feedback" data-sb-feedback="emailDE:required">E-Mail ist erforderlich.</div>
+          <div class="invalid-feedback" data-sb-feedback="emailDE:email">Ungültige E-Mail.</div>
         </div>
         <div class="col-12">
           <label for="nachrichtDE" class="form-label">Nachricht</label>
-          <textarea class="form-control" id="nachrichtDE" name="message" rows="5" required></textarea>
-        </div>
-
-        <!-- Datei-Upload -->
-        <div class="col-12">
-          <style>
-            #dropzoneDE {
-              border: 2px dashed rgba(99, 102, 241, .45);
-              border-radius: 12px;
-              background: #fff;
-              padding: 18px;
-              transition: .15s
-            }
-
-            #dropzoneDE.dragover {
-              background: #f8f9ff;
-              border-color: #6366f1
-            }
-
-            #fileListDE .file-item {
-              display: flex;
-              align-items: center;
-              gap: .5rem;
-              background: #f8fafc;
-              border: 1px solid #e2e8f0;
-              padding: .5rem .75rem;
-              border-radius: 10px
-            }
-
-            #fileListDE .file-size {
-              color: #64748b;
-              font-size: .9rem
-            }
-          </style>
-
-          <label class="form-label">Anhänge (optional)</label>
-          <div id="dropzoneDE" class="d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3">
-            <div class="text-muted small">
-              Dateien hierher ziehen oder
-              <label for="filesDE" class="link-primary" style="cursor:pointer">vom Gerät wählen</label><br>
-              <span class="d-block">Erlaubt: PDF, JPG/PNG, DOC/DOCX, XLS/XLSX (max. 10&nbsp;MB/Datei, 25&nbsp;MB
-                gesamt)</span>
-            </div>
-            <input class="form-control" type="file" id="filesDE" name="files[]" multiple
-              accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx,.odt,.ods" style="max-width:280px;">
-          </div>
-
-          <div id="fileListDE" class="mt-3 d-grid gap-2"></div>
-          <div id="fileTotalsDE" class="mt-1 small text-muted"></div>
+          <textarea class="form-control" id="nachrichtDE" rows="5" placeholder="Ihre Nachricht"
+            data-sb-validations="required"></textarea>
+          <div class="invalid-feedback" data-sb-feedback="nachrichtDE:required">Nachricht ist erforderlich.</div>
         </div>
 
         <div class="col-12 d-flex align-items-center gap-3">
-          <button type="submit" class="btn btn-primary" style="background:#6366f1;border-color:#6366f1">Nachricht
-            senden</button>
+          <button class="btn btn-primary" id="submitButtonDE" type="submit"
+            style="background:#6366f1;border-color:#6366f1" data-sb-form-submit>
+            Nachricht senden
+          </button>
           <small class="text-muted">Mit dem Absenden stimmen Sie der Datenverarbeitung zu.</small>
+        </div>
+
+        <div class="d-none mt-3" id="submitSuccessMessageDE">
+          <div class="text-success">Ihre Nachricht wurde erfolgreich gesendet!</div>
+        </div>
+        <div class="d-none mt-3" id="submitErrorMessageDE">
+          <div class="text-danger">Fehler beim Senden. Bitte erneut versuchen.</div>
         </div>
       </form>
     </div>
   </section>
+
 
   <footer class="py-4">
     <div class="container small text-muted d-flex flex-column flex-lg-row justify-content-between">
@@ -444,6 +414,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     crossorigin="anonymous"></script>
   <script src="../assets/main.js"></script>
+  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 
 </html>

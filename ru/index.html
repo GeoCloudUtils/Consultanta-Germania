@@ -362,7 +362,7 @@
     </div>
   </section>
 
-  <section id="contact" class="py-5 bg-light">
+  <section id="contacts" class="py-5 bg-light">
     <div class="container">
       <h2 class="h1 section-title">Контакты</h2>
       <p class="text-muted mt-2 col-lg-8">Кратко опишите ситуацию — ответим в течение 24–48 рабочих часов.</p>
@@ -374,76 +374,46 @@
         <a href="tel:+4915734659642" class="btn btn-outline-secondary">Позвонить: +49 1573 4659642</a>
       </div>
 
-      <form class="row g-3 mt-1 col-lg-8" method="post" action="#" enctype="multipart/form-data" id="contactFormRU">
+      <form class="row g-3 mt-1 col-lg-8" id="contactFormRU"
+        data-sb-form-api-token="a45f4d94-ca8f-4b05-b6f6-3cbf0aa11b84">
         <div class="col-md-6">
           <label for="nameRU" class="form-label">Имя</label>
-          <input type="text" class="form-control" id="nameRU" name="name" required>
+          <input class="form-control" id="nameRU" type="text" placeholder="Введите имя"
+            data-sb-validations="required" />
+          <div class="invalid-feedback" data-sb-feedback="nameRU:required">Имя обязательно.</div>
         </div>
         <div class="col-md-6">
           <label for="emailRU" class="form-label">Email</label>
-          <input type="email" class="form-control" id="emailRU" name="email" required>
+          <input class="form-control" id="emailRU" type="email" placeholder="Введите email"
+            data-sb-validations="required,email" />
+          <div class="invalid-feedback" data-sb-feedback="emailRU:required">Email обязателен.</div>
+          <div class="invalid-feedback" data-sb-feedback="emailRU:email">Неверный email.</div>
         </div>
         <div class="col-12">
           <label for="msgRU" class="form-label">Сообщение</label>
-          <textarea class="form-control" id="msgRU" name="message" rows="5" required></textarea>
-        </div>
-
-        <!-- Загрузка файлов -->
-        <div class="col-12">
-          <style>
-            #dropzoneRU {
-              border: 2px dashed rgba(99, 102, 241, .45);
-              border-radius: 12px;
-              background: #fff;
-              padding: 18px;
-              transition: .15s
-            }
-
-            #dropzoneRU.dragover {
-              background: #f8f9ff;
-              border-color: #6366f1
-            }
-
-            #fileListRU .file-item {
-              display: flex;
-              align-items: center;
-              gap: .5rem;
-              background: #f8fafc;
-              border: 1px solid #e2e8f0;
-              padding: .5rem .75rem;
-              border-radius: 10px
-            }
-
-            #fileListRU .file-size {
-              color: #64748b;
-              font-size: .9rem
-            }
-          </style>
-
-          <label class="form-label">Вложения (необязательно)</label>
-          <div id="dropzoneRU" class="d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3">
-            <div class="text-muted small">
-              Перетащите файлы сюда или
-              <label for="filesRU" class="link-primary" style="cursor:pointer">выберите на устройстве</label><br>
-              <span class="d-block">Допустимо: PDF, JPG/PNG, DOC/DOCX, XLS/XLSX (макс. 10&nbsp;MB/файл, 25&nbsp;MB
-                всего)</span>
-            </div>
-            <input class="form-control" type="file" id="filesRU" name="files[]" multiple
-              accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx,.odt,.ods" style="max-width:280px;">
-          </div>
-
-          <div id="fileListRU" class="mt-3 d-grid gap-2"></div>
-          <div id="fileTotalsRU" class="mt-1 small text-muted"></div>
+          <textarea class="form-control" id="msgRU" rows="5" placeholder="Ваше сообщение"
+            data-sb-validations="required"></textarea>
+          <div class="invalid-feedback" data-sb-feedback="msgRU:required">Сообщение обязательно.</div>
         </div>
 
         <div class="col-12 d-flex align-items-center gap-3">
-          <button type="submit" class="btn btn-primary"
-            style="background:#6366f1;border-color:#6366f1">Отправить</button>
+          <button class="btn btn-primary" id="submitButtonRU" type="submit"
+            style="background:#6366f1;border-color:#6366f1" data-sb-form-submit>
+            Отправить
+          </button>
           <small class="text-muted">Отправляя, вы соглашаетесь на обработку данных.</small>
+        </div>
+
+        <div class="d-none mt-3" id="submitSuccessMessageRU">
+          <div class="text-success">Сообщение успешно отправлено!</div>
+        </div>
+        <div class="d-none mt-3" id="submitErrorMessageRU">
+          <div class="text-danger">Ошибка отправки. Попробуйте ещё раз.</div>
         </div>
       </form>
     </div>
   </section>
+
 
   <footer class="py-4">
     <div class="container small text-muted d-flex flex-column flex-lg-row justify-content-between">
@@ -478,6 +448,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     crossorigin="anonymous"></script>
   <script src="../assets/main.js"></script>
+  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 
 </html>
