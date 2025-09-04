@@ -1,81 +1,12 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ro">
 
 <head>
-    <meta charset="utf-8">
-    <title>Redirect…</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <noscript>
-        <meta http-equiv="refresh" content="0; url=/Consultanta-Germania/ro/">
-    </noscript>
-    <style>
-        html,
-        body {
-            height: 100%
-        }
-
-        body {
-            display: grid;
-            place-items: center;
-            font: 16px/1.4 system-ui, -apple-system, Segoe UI, Roboto, Arial
-        }
-
-        .wrap {
-            max-width: 640px;
-            padding: 24px;
-            text-align: center;
-            color: #334155
-        }
-
-        a {
-            color: #6366f1;
-            text-decoration: none
-        }
-
-        a:hover {
-            text-decoration: underline
-        }
-    </style>
-</head>
-
-<body>
+    <meta charset="UTF-8">
+    <title>Redirect...</title>
     <script>
-        (function () {
-            var BASE = "/Consultanta-Germania/";
-
-            var url = new URL(window.location.href);
-            var qLang = (url.searchParams.get("lang") || "").toLowerCase();
-            var valid = ["ro", "ru", "de"];
-            if (valid.includes(qLang)) {
-                try { localStorage.setItem("site_lang", qLang); } catch (e) { }
-                return window.location.replace(BASE + qLang + "/");
-            }
-
-            var saved = null;
-            try { saved = localStorage.getItem("site_lang"); } catch (e) { }
-            if (valid.includes(saved)) {
-                return window.location.replace(BASE + saved + "/");
-            }
-
-            function detect() {
-                var langs = (navigator.languages && navigator.languages.slice()) || [];
-                if (!langs.length && navigator.language) langs = [navigator.language];
-                langs = langs.map(function (l) { return String(l || "").toLowerCase(); });
-
-                for (var i = 0; i < langs.length; i++) {
-                    var l = langs[i];
-                    if (l.startsWith("ro") || l.startsWith("mo")) return "ro";
-                    if (l.startsWith("ru")) return "ru";
-                    if (l.startsWith("de")) return "de";
-                }
-                return "ro";
-            }
-
-            var target = detect();
-            try { localStorage.setItem("site_lang", target); } catch (e) { }
-            window.location.replace(BASE + target + "/");
-        })();
+        window.location.replace("/Consultanta-Germania/ro/");
     </script>
-</body>
+</head>
 
 </html>
