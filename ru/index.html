@@ -366,19 +366,76 @@
     <div class="container">
       <h2 class="h1 section-title">Контакты</h2>
       <p class="text-muted mt-2 col-lg-8">Кратко опишите ситуацию — ответим в течение 24–48 рабочих часов.</p>
+
       <div class="d-flex flex-wrap gap-2 mt-2 mb-3">
         <a href="https://wa.me/4915734659642" class="btn btn-success" target="_blank" rel="noopener">WhatsApp</a>
         <a href="https://facebook.com/" class="btn btn-primary" target="_blank" rel="noopener"
           style="background:#1877F2;border-color:#1877F2">Facebook</a>
         <a href="tel:+4915734659642" class="btn btn-outline-secondary">Позвонить: +49 1573 4659642</a>
       </div>
-      <form class="row g-3 mt-1 col-lg-8">
-        <div class="col-md-6"><label class="form-label">Имя</label><input type="text" class="form-control" required>
+
+      <form class="row g-3 mt-1 col-lg-8" method="post" action="#" enctype="multipart/form-data" id="contactFormRU">
+        <div class="col-md-6">
+          <label for="nameRU" class="form-label">Имя</label>
+          <input type="text" class="form-control" id="nameRU" name="name" required>
         </div>
-        <div class="col-md-6"><label class="form-label">Email</label><input type="email" class="form-control" required>
+        <div class="col-md-6">
+          <label for="emailRU" class="form-label">Email</label>
+          <input type="email" class="form-control" id="emailRU" name="email" required>
         </div>
-        <div class="col-12"><label class="form-label">Сообщение</label><textarea class="form-control" rows="5"
-            required></textarea></div>
+        <div class="col-12">
+          <label for="msgRU" class="form-label">Сообщение</label>
+          <textarea class="form-control" id="msgRU" name="message" rows="5" required></textarea>
+        </div>
+
+        <!-- Загрузка файлов -->
+        <div class="col-12">
+          <style>
+            #dropzoneRU {
+              border: 2px dashed rgba(99, 102, 241, .45);
+              border-radius: 12px;
+              background: #fff;
+              padding: 18px;
+              transition: .15s
+            }
+
+            #dropzoneRU.dragover {
+              background: #f8f9ff;
+              border-color: #6366f1
+            }
+
+            #fileListRU .file-item {
+              display: flex;
+              align-items: center;
+              gap: .5rem;
+              background: #f8fafc;
+              border: 1px solid #e2e8f0;
+              padding: .5rem .75rem;
+              border-radius: 10px
+            }
+
+            #fileListRU .file-size {
+              color: #64748b;
+              font-size: .9rem
+            }
+          </style>
+
+          <label class="form-label">Вложения (необязательно)</label>
+          <div id="dropzoneRU" class="d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3">
+            <div class="text-muted small">
+              Перетащите файлы сюда или
+              <label for="filesRU" class="link-primary" style="cursor:pointer">выберите на устройстве</label><br>
+              <span class="d-block">Допустимо: PDF, JPG/PNG, DOC/DOCX, XLS/XLSX (макс. 10&nbsp;MB/файл, 25&nbsp;MB
+                всего)</span>
+            </div>
+            <input class="form-control" type="file" id="filesRU" name="files[]" multiple
+              accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx,.odt,.ods" style="max-width:280px;">
+          </div>
+
+          <div id="fileListRU" class="mt-3 d-grid gap-2"></div>
+          <div id="fileTotalsRU" class="mt-1 small text-muted"></div>
+        </div>
+
         <div class="col-12 d-flex align-items-center gap-3">
           <button type="submit" class="btn btn-primary"
             style="background:#6366f1;border-color:#6366f1">Отправить</button>

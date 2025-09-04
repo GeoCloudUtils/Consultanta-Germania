@@ -327,39 +327,87 @@
     </div>
   </section>
 
-  <section id="intrebari" class="py-5">
+  <section id="contact" class="py-5 bg-light">
     <div class="container">
-      <h2 class="h1 section-title">Häufige Fragen</h2>
-      <div class="accordion mt-3" id="faqAccordion">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="q1">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#a1"
-              aria-expanded="true" aria-controls="a1">Kann ich alles 100% online einreichen?</button>
-          </h2>
-          <div id="a1" class="accordion-collapse collapse show">
-            <div class="accordion-body">Ja. Wir erklären die Schritte, sammeln Unterlagen sicher und übernehmen
-              Einreichung/Korrespondenz.</div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="q2">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a2">Wie
-              schnell erhalte ich das Geld?</button>
-          </h2>
-          <div id="a2" class="accordion-collapse collapse">
-            <div class="accordion-body">Üblicherweise 4–12 Wochen, je nach Behörde.</div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="q3">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#a3">Was
-              kostet es?</button>
-          </h2>
-          <div id="a3" class="accordion-collapse collapse">
-            <div class="accordion-body">Wir senden vorab ein schriftliches Angebot.</div>
-          </div>
-        </div>
+      <h2 class="h1 section-title">Kontakt</h2>
+      <p class="text-muted mt-2 col-lg-8">Beschreiben Sie kurz Ihre Situation – wir melden uns innerhalb von 24–48 Std.
+      </p>
+
+      <div class="d-flex flex-wrap gap-2 mt-2 mb-3">
+        <a href="https://wa.me/4915734659642" class="btn btn-success" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://facebook.com/" class="btn btn-primary" target="_blank" rel="noopener"
+          style="background:#1877F2;border-color:#1877F2">Facebook</a>
+        <a href="tel:+4915734659642" class="btn btn-outline-secondary">Anrufen: +49 1573 4659642</a>
       </div>
+
+      <form class="row g-3 mt-1 col-lg-8" method="post" action="#" enctype="multipart/form-data" id="contactFormDE">
+        <div class="col-md-6">
+          <label for="nameDE" class="form-label">Name</label>
+          <input type="text" class="form-control" id="nameDE" name="name" required>
+        </div>
+        <div class="col-md-6">
+          <label for="emailDE" class="form-label">E-Mail</label>
+          <input type="email" class="form-control" id="emailDE" name="email" required>
+        </div>
+        <div class="col-12">
+          <label for="nachrichtDE" class="form-label">Nachricht</label>
+          <textarea class="form-control" id="nachrichtDE" name="message" rows="5" required></textarea>
+        </div>
+
+        <!-- Datei-Upload -->
+        <div class="col-12">
+          <style>
+            #dropzoneDE {
+              border: 2px dashed rgba(99, 102, 241, .45);
+              border-radius: 12px;
+              background: #fff;
+              padding: 18px;
+              transition: .15s
+            }
+
+            #dropzoneDE.dragover {
+              background: #f8f9ff;
+              border-color: #6366f1
+            }
+
+            #fileListDE .file-item {
+              display: flex;
+              align-items: center;
+              gap: .5rem;
+              background: #f8fafc;
+              border: 1px solid #e2e8f0;
+              padding: .5rem .75rem;
+              border-radius: 10px
+            }
+
+            #fileListDE .file-size {
+              color: #64748b;
+              font-size: .9rem
+            }
+          </style>
+
+          <label class="form-label">Anhänge (optional)</label>
+          <div id="dropzoneDE" class="d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3">
+            <div class="text-muted small">
+              Dateien hierher ziehen oder
+              <label for="filesDE" class="link-primary" style="cursor:pointer">vom Gerät wählen</label><br>
+              <span class="d-block">Erlaubt: PDF, JPG/PNG, DOC/DOCX, XLS/XLSX (max. 10&nbsp;MB/Datei, 25&nbsp;MB
+                gesamt)</span>
+            </div>
+            <input class="form-control" type="file" id="filesDE" name="files[]" multiple
+              accept=".pdf,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx,.odt,.ods" style="max-width:280px;">
+          </div>
+
+          <div id="fileListDE" class="mt-3 d-grid gap-2"></div>
+          <div id="fileTotalsDE" class="mt-1 small text-muted"></div>
+        </div>
+
+        <div class="col-12 d-flex align-items-center gap-3">
+          <button type="submit" class="btn btn-primary" style="background:#6366f1;border-color:#6366f1">Nachricht
+            senden</button>
+          <small class="text-muted">Mit dem Absenden stimmen Sie der Datenverarbeitung zu.</small>
+        </div>
+      </form>
     </div>
   </section>
 
