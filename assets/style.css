@@ -13,27 +13,23 @@ body {
     radial-gradient(1000px 500px at 90% 10%, rgba(59, 130, 246, .15), transparent);
 }
 
-.lang-switch .lang-flag {
-  font-size: 1.5rem;
-  /* mărime steag */
-  text-decoration: none;
-  transition: transform 0.2s ease, filter 0.2s ease;
+.lang-switch .lang-flag img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.lang-switch .lang-flag:hover {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 4px rgba(0, 0, 0, .2));
+.lang-switch .lang-flag img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
 }
 
 @media (max-width: 991.98px) {
-  .lang-switch {
-    margin-top: 0.5rem;
-    justify-content: flex-start;
-  }
-
-  .lang-switch .lang-flag {
-    font-size: 2rem;
-    /* mai mare pe mobil */
+  .lang-switch .lang-flag img {
+    width: 36px;
+    height: 36px;
   }
 }
 
