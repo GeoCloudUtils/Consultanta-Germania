@@ -13,38 +13,27 @@ body {
     radial-gradient(1000px 500px at 90% 10%, rgba(59, 130, 246, .15), transparent);
 }
 
-/* Language dropdown improvements */
-.lang-dropdown .dropdown-toggle {
-  font-size: 1rem;
-  border-radius: 8px;
-  padding: 10px 14px;
+.lang-switch .lang-flag {
+  font-size: 1.5rem;
+  /* mărime steag */
+  text-decoration: none;
+  transition: transform 0.2s ease, filter 0.2s ease;
 }
 
-.lang-dropdown .dropdown-menu {
-  min-width: 180px;
-  padding: 6px;
-}
-
-.lang-dropdown .dropdown-item {
-  font-size: 1.05rem;
-  border-radius: 6px;
-  padding: 10px 14px;
-}
-
-.lang-dropdown .dropdown-item:hover {
-  background-color: #f3f4f6;
+.lang-switch .lang-flag:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, .2));
 }
 
 @media (max-width: 991.98px) {
-
-  /* full width on mobile */
-  .lang-dropdown {
-    width: 100%;
+  .lang-switch {
+    margin-top: 0.5rem;
+    justify-content: flex-start;
   }
 
-  .lang-dropdown .dropdown-toggle {
-    width: 100%;
-    justify-content: flex-start;
+  .lang-switch .lang-flag {
+    font-size: 2rem;
+    /* mai mare pe mobil */
   }
 }
 
